@@ -1,28 +1,35 @@
 package com.educative.ecommerce.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name ="Category")
+@Table(name = "category")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "category_name")
-
     private @NotBlank String categoryName;
 
     private @NotBlank String description;
 
+    @Column(name = "image_url")
+    private @NotBlank String imageUrl;
+
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getCategoryName() {
@@ -48,8 +55,4 @@ public class Category {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
-    @Column(name = "image_url")
-    private @NotBlank String imageUrl;
-
 }
