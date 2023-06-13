@@ -3,7 +3,8 @@ package com.educative.ecommerce.dto;
 import javax.validation.constraints.NotNull;
 
 public class ProductDto {
-
+    // for create it can be optional
+    // for update we need the id
     private Integer id;
     private @NotNull String name;
     private @NotNull String imageURL;
@@ -11,12 +12,8 @@ public class ProductDto {
     private @NotNull String description;
     private @NotNull Integer categoryId;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public ProductDto() {
     }
 
     public String getName() {
@@ -57,5 +54,13 @@ public class ProductDto {
 
     public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
